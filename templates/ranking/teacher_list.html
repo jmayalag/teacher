@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Listado de Profesores{% endblock %}
+
+{% block content %}
+	<h1>Lista por Puntuacion</h1>
+		{% if teacher_list %}
+			<ol>
+			{% for t in teacher_list %}
+				<li><a href="{% url 'teacher_detail' t.id %}">{{ t.first_name }} {{ t.last_name }}</a> - Puntaje: {{ t.score }}</li>
+			{% endfor %}
+			</ol>
+		{% else %}
+			<strong>There are no teachers!</strong>
+		{% endif %}
+{% endblock %}

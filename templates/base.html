@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>PoliTeachers - {% block title %}Ranking{% endblock %}</title>
+	</head>
+	<body>
+		{% block content %}{% endblock %}
+		<hr />
+		<div>
+			<a href="{% url 'index' %}">Home</a>
+			<a href="{% url 'teacher_list' %}">Lista de Profesores</a>
+		</div>
+	</body>
+</html>

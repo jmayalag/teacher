@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+	<h1>PoliTeachers</h1><br />
+	<h2>Top Teachers</h2>
+	{% if teachers %}
+		{% for t in teachers %}
+			<li><a href="{% url 'teacher_detail' t.id %}">{{ t.first_name }} {{ t.last_name }}</a> - Puntaje: {{ t.score }}</li>
+		{% endfor %}
+	{% endif %}
+{% endblock %}
+	
